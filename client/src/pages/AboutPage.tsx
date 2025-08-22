@@ -193,14 +193,16 @@ export default function AboutPage() {
                 variant="ghost"
                 className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white"
                 data-testid="contact-email"
+                onClick={() => window.open('mailto:mikancat.mk.taki@gmail.com', '_blank')}
               >
                 <Mail className="mr-2 h-4 w-4" />
-                support@dotwork.app
+                mikancat.mk.taki@gmail.com
               </Button>
               <Button
                 variant="ghost"
                 className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white"
                 data-testid="contact-github"
+                onClick={() => window.open('https://github.com/mikancat-taki', '_blank')}
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 GitHub
