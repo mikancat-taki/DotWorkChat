@@ -41,19 +41,19 @@ export default function HomePage() {
       icon: LinkIcon,
       title: t("urlJoinTitle"),
       description: t("urlJoinDesc"),
-      color: "bg-blue-100 dark:bg-blue-900/30 text-primary",
+      color: "bg-blue-100 text-primary",
     },
     {
       icon: Users,
       title: t("chatTypesTitle"),
       description: t("chatTypesDesc"),
-      color: "bg-green-100 dark:bg-green-900/30 text-accent",
+      color: "bg-green-100 text-accent",
     },
     {
       icon: Globe,
       title: t("multiLanguageTitle"),
       description: t("multiLanguageDesc"),
-      color: "bg-purple-100 dark:bg-purple-900/30 text-purple-600",
+      color: "bg-purple-100 text-purple-600",
     },
   ];
 
@@ -65,12 +65,12 @@ export default function HomePage() {
           <div className="w-20 h-20 bg-gradient-to-r from-primary to-accent rounded-2xl mx-auto mb-8 flex items-center justify-center">
             <i className="fas fa-comments text-white text-2xl"></i>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               {t("appTitle")}
             </span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             {t("appDescription")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -102,10 +102,10 @@ export default function HomePage() {
                 <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center mb-6`}>
                   <feature.icon className="text-xl" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-600">
                   {feature.description}
                 </p>
               </CardContent>

@@ -148,10 +148,10 @@ export default function ChatPage() {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+      <div className="w-80 bg-white border-r border-gray-200 flex flex-col">
         {/* Chat Controls */}
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="p-4 border-b border-gray-200">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
             {t("chat")}
           </h2>
           
@@ -173,7 +173,7 @@ export default function ChatPage() {
 
           {/* Room URL Input */}
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               {t("roomUrl")}
             </label>
             <div className="flex gap-2">
@@ -198,7 +198,7 @@ export default function ChatPage() {
 
           {/* Username Input */}
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Username
             </label>
             <Input
@@ -223,8 +223,8 @@ export default function ChatPage() {
         </div>
 
         {/* Active Participants */}
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-          <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+        <div className="p-4 border-b border-gray-200">
+          <h3 className="text-sm font-medium text-gray-700 mb-3">
             {t("participants")} ({participants.length})
           </h3>
           <div className="space-y-2">
@@ -233,7 +233,7 @@ export default function ChatPage() {
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-medium">
                   {participant.avatar}
                 </div>
-                <span className="text-sm text-gray-900 dark:text-white">
+                <span className="text-sm text-gray-900">
                   {participant.username}
                 </span>
                 <div className={`w-2 h-2 ${participant.online ? 'bg-green-500' : 'bg-gray-400'} rounded-full`} />
@@ -244,11 +244,11 @@ export default function ChatPage() {
 
         {/* Room Info */}
         <div className="flex-1 p-4">
-          <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+          <h3 className="text-sm font-medium text-gray-700 mb-3">
             {t("roomInfo")}
           </h3>
           {room && (
-            <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <div className="space-y-2 text-sm text-gray-600">
               <div>Created: {formatTimestamp(room.createdAt)}</div>
               <div>Messages: {messages.length}</div>
               <div>Type: {room.type}</div>
@@ -258,17 +258,17 @@ export default function ChatPage() {
       </div>
 
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col bg-gray-50 dark:bg-gray-900">
+      <div className="flex-1 flex flex-col bg-gray-50">
         {currentRoomId ? (
           <>
             {/* Chat Header */}
-            <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
+            <div className="bg-white border-b border-gray-200 p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     {room?.name || `Room ${currentRoomId}`}
                   </h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-gray-600">
                     Room ID: {currentRoomId}
                   </p>
                 </div>
@@ -315,16 +315,16 @@ export default function ChatPage() {
                         className={`px-4 py-3 rounded-2xl ${
                           msg.username === username
                             ? "bg-primary text-white rounded-br-none"
-                            : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-bl-none"
+                            : "bg-white border border-gray-200 rounded-bl-none"
                         }`}
                       >
                         <p className={`text-sm ${
-                          msg.username === username ? "text-white" : "text-gray-900 dark:text-white"
+                          msg.username === username ? "text-white" : "text-gray-900"
                         }`}>
                           {msg.content}
                         </p>
                       </div>
-                      <div className={`text-xs text-gray-500 dark:text-gray-400 mt-1 ${
+                      <div className={`text-xs text-gray-500 mt-1 ${
                         msg.username === username ? "text-right" : ""
                       }`}>
                         {formatTimestamp(msg.createdAt)}
@@ -342,7 +342,7 @@ export default function ChatPage() {
             </div>
 
             {/* Message Input */}
-            <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-4">
+            <div className="bg-white border-t border-gray-200 p-4">
               <div className="flex items-end space-x-3">
                 <div className="flex-1">
                   <Textarea
@@ -364,7 +364,7 @@ export default function ChatPage() {
                   <Send className="h-4 w-4" />
                 </Button>
               </div>
-              <div className="flex items-center justify-between mt-2 text-xs text-gray-500 dark:text-gray-400">
+              <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
                 <span>Enter to send, Shift+Enter for new line</span>
                 <Badge variant="outline" className="text-green-500 border-green-500">
                   Connected

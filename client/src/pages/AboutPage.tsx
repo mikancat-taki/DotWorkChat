@@ -86,10 +86,10 @@ export default function AboutPage() {
     <div className="py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {content.title}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-gray-600">
             {content.subtitle}
           </p>
         </div>
@@ -98,14 +98,14 @@ export default function AboutPage() {
           {/* App Overview */}
           <Card>
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 {content.appOverview.title}
               </h2>
               <div className="prose dark:prose-invert max-w-none">
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   {content.appOverview.description1}
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {content.appOverview.description2}
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default function AboutPage() {
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold text-gray-900">
                 {content.features.title}
               </h2>
               
@@ -126,10 +126,10 @@ export default function AboutPage() {
                       {featureIcons[index]}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white">
+                      <h3 className="font-semibold text-gray-900">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      <p className="text-gray-600 text-sm">
                         {feature.description}
                       </p>
                     </div>
@@ -139,42 +139,42 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold text-gray-900">
                 {content.techSpecs.title}
               </h2>
               
-              <Card className="bg-gray-50 dark:bg-gray-700">
+              <Card className="bg-gray-50">
                 <CardContent className="p-6">
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="font-medium text-gray-700 dark:text-gray-300">
+                      <span className="font-medium text-gray-700">
                         {language === "ja" ? "バージョン" : "Version"}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400">
+                      <span className="text-gray-600">
                         {content.techSpecs.version}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-medium text-gray-700 dark:text-gray-300">
+                      <span className="font-medium text-gray-700">
                         {language === "ja" ? "プラットフォーム" : "Platform"}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400">
+                      <span className="text-gray-600">
                         {content.techSpecs.platform}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-medium text-gray-700 dark:text-gray-300">
+                      <span className="font-medium text-gray-700">
                         {language === "ja" ? "対応ブラウザ" : "Supported Browsers"}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400">
+                      <span className="text-gray-600">
                         {content.techSpecs.browsers}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-medium text-gray-700 dark:text-gray-300">
+                      <span className="font-medium text-gray-700">
                         {language === "ja" ? "更新方式" : "Update Method"}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400">
+                      <span className="text-gray-600">
                         {content.techSpecs.updateMethod}
                       </span>
                     </div>

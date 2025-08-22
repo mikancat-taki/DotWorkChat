@@ -171,19 +171,19 @@ export default function DocsPage() {
       case "getting-started":
         return (
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               {gettingStartedContent.title}
             </h2>
             <div className="space-y-8">
               {gettingStartedContent.sections.map((section, index) => (
                 <div key={index}>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     {section.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     {section.description}
                   </p>
-                  <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 ml-4">
+                  <ol className="list-decimal list-inside space-y-2 text-gray-600 ml-4">
                     {section.steps.map((step, stepIndex) => (
                       <li key={stepIndex}>{step}</li>
                     ))}
@@ -197,20 +197,20 @@ export default function DocsPage() {
       case "chat-types":
         return (
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               {chatTypesContent.title}
             </h2>
             <div className="space-y-6">
               {chatTypesContent.types.map((type, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
                       {type.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    <p className="text-gray-600 mb-4">
                       {type.description}
                     </p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
                       {type.features.map((feature, featureIndex) => (
                         <li key={featureIndex}>{feature}</li>
                       ))}
@@ -225,17 +225,17 @@ export default function DocsPage() {
       case "faq":
         return (
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               {faqContent.title}
             </h2>
             <div className="space-y-6">
               {faqContent.questions.map((item, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
                       {item.question}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600">
                       {item.answer}
                     </p>
                   </CardContent>
@@ -276,17 +276,17 @@ export default function DocsPage() {
     <div className="py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t("docs")}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-gray-600">
             {language === "ja" ? "ドットワークの使い方と機能について詳しく説明します" : "Learn how to use DotWork and its features"}
           </p>
         </div>
 
         {/* Documentation Navigation */}
         <Card className="mb-8">
-          <div className="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
+          <div className="flex flex-wrap border-b border-gray-200">
             {tabs.map((tab) => (
               <Button
                 key={tab.id}
@@ -294,7 +294,7 @@ export default function DocsPage() {
                 className={`px-6 py-4 rounded-none border-b-2 ${
                   activeTab === tab.id
                     ? "text-primary border-primary"
-                    : "text-gray-600 dark:text-gray-400 border-transparent hover:text-gray-900 dark:hover:text-white"
+                    : "text-gray-600 border-transparent hover:text-gray-900"
                 }`}
                 onClick={() => setActiveTab(tab.id)}
                 data-testid={`tab-${tab.id}`}
@@ -311,19 +311,19 @@ export default function DocsPage() {
 
         {/* Quick Reference */}
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-blue-50 dark:bg-blue-900/20">
+          <Card className="bg-blue-50">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-4 flex items-center">
+              <h3 className="text-lg font-semibold text-blue-900 mb-4 flex items-center">
                 <Keyboard className="mr-2 h-5 w-5" />
                 {language === "ja" ? "キーボードショートカット" : "Keyboard Shortcuts"}
               </h3>
               <div className="space-y-2 text-sm">
                 {shortcuts.map((shortcut, index) => (
                   <div key={index} className="flex justify-between">
-                    <span className="text-blue-800 dark:text-blue-300 font-mono">
+                    <span className="text-blue-800 font-mono">
                       {shortcut.key}
                     </span>
-                    <span className="text-blue-600 dark:text-blue-400">
+                    <span className="text-blue-600">
                       {shortcut.action}
                     </span>
                   </div>
@@ -332,13 +332,13 @@ export default function DocsPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-green-50 dark:bg-green-900/20">
+          <Card className="bg-green-50">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-green-900 dark:text-green-300 mb-4 flex items-center">
+              <h3 className="text-lg font-semibold text-green-900 mb-4 flex items-center">
                 <Lightbulb className="mr-2 h-5 w-5" />
                 {language === "ja" ? "使用のヒント" : "Usage Tips"}
               </h3>
-              <ul className="space-y-2 text-sm text-green-800 dark:text-green-300">
+              <ul className="space-y-2 text-sm text-green-800">
                 {tips.map((tip, index) => (
                   <li key={index}>• {tip}</li>
                 ))}
