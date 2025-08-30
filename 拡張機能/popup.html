@@ -1,13 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ドットワークチャット</title>
-  <style>
-    body { width: 200px; padding: 10px; }
-  </style>
-</head>
-<body>
-  <h1>こんにちは！</h1>
-  <p>これは私の最初の拡張機能です。</p>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+      body {
+        width: 300px;
+        height: 500px;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f0f2f5;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      #messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .message {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        max-width: 80%;
+      }
+      .message.user {
+        align-self: flex-end;
+      }
+      .message.ai {
+        align-self: flex-start;
+      }
+      .message-content {
+        background-color: #fff;
+        padding: 10px 15px;
+        border-radius: 20px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+      .message.user .message-content {
+        background-color: #007bff;
+        color: white;
+        border-bottom-right-radius: 0;
+      }
+      .message.ai .message-content {
+        background-color: #e4e6eb;
+        color: #333;
+        border-bottom-left-radius: 0;
+      }
+      #input-container {
+        display: flex;
+        padding: 10px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      #user-input {
+        flex-grow: 1;
+        border-radius: 20px;
+        padding: 8px 15px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        outline: none;
+      }
+      #send-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-left: 8px;
+        outline: none;
+        transition: background-color 0.2s;
+      }
+      #send-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="messages"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="メッセージを入力...">
+      <button id="send-button">送信</button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+  chrome.runtime.onInstalled.addListener(() => {
+  console.log('拡張機能がインストールされました。');
+});
+
+// バックグラウンドスクリプトのロジックをここに記述します。
+// 例：特定のイベントをリッスンする
+// chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+//   if (changeInfo.status === 'complete' && tab.url) {
+//     console.log('新しいページが読み込まれました:', tab.url);
+//   }
+// });
+
 </html>
